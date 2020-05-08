@@ -1,0 +1,22 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> 
+<@layout.myLayout "Home page">    
+    
+    
+<#if book??>
+
+    <h1>${book.book_title}</h1>  
+    <p>Price: ${book.book_price}</p>  
+    <a class="btn btn-primary btn-md" href="/delete/${book.id}" role="button">DELETE</a>
+    <a class="btn btn-primary btn-md" href="/update/${book.id}" role="button">UPDATE</a>
+ 
+    
+<#else>
+    
+    <p>Sorry. Post not found. Please go back to <a href="/index">index</a></p>
+    
+</#if>
+    
+
+     
+
+</@layout.myLayout>
