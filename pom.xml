@@ -202,6 +202,11 @@
             <artifactId>h2</artifactId>
             <version>1.4.186</version>
         </dependency>
+         <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>9.4.1208</version>
+    	</dependency>
         <!-- If you want to deploy to a war please -->
         <!-- comment ninja-standalone dependency and  -->
         <!-- uncomment the dependency for ninja-servlet -->
