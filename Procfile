@@ -1,1 +1,1 @@
-web:mvn ninja:run
+mvn ninja:run
