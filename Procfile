@@ -1,1 +1,1 @@
-web:    mvn ninja:run -Dninja.mode=prod 
+web:    mvn ninja:run 
