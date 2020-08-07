@@ -21,7 +21,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import models.User;
+import models.AppUser;
 
 import ninja.jpa.UnitOfWork;
 
@@ -41,8 +41,8 @@ public class UserDao {
             
             EntityManager entityManager = entityManagerProvider.get();
             
-            TypedQuery<User> q = entityManager.createQuery("SELECT x FROM User x WHERE username = :usernameParam", User.class);
-            User user = getSingleResult(q.setParameter("usernameParam", username));
+            TypedQuery<AppUser> q = entityManager.createQuery("SELECT x FROM AppUser x WHERE username = :usernameParam", AppUser.class);
+            AppUser user = getSingleResult(q.setParameter("usernameParam", username));
 
             if (user != null) {
                 

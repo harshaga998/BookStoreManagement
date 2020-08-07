@@ -24,7 +24,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import models.Article;
-import models.User;
+import models.AppUser;
 
 import com.google.inject.Provider;
 import com.google.inject.persist.Transactional;
@@ -40,13 +40,13 @@ public class SetupDao {
         
         EntityManager entityManager = entityManagerProvider.get();
         
-        TypedQuery<User> q = entityManager.createQuery("SELECT x FROM User x", User.class);
-        List<User> users = q.getResultList();        
+        TypedQuery<AppUser> q = entityManager.createQuery("SELECT x FROM AppUser x", AppUser.class);
+        List<AppUser> users = q.getResultList();        
         
         if (users.size() == 0) {
 
             // Create a new user and save it
-            User bob = new User("bob@gmail.com", "secret", "Bob");
+            AppUser bob = new AppUser("bob@gmail.com", "secret", "Bob");
             entityManager.persist(bob);
             
             // Create a new post

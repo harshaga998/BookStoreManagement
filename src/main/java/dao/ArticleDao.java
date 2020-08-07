@@ -24,7 +24,7 @@ import javax.persistence.TypedQuery;
 import models.Article;
 import models.ArticleDto;
 import models.ArticlesDto;
-import models.User;
+import models.AppUser;
 import ninja.jpa.UnitOfWork;
 
 import com.google.inject.Inject;
@@ -98,8 +98,8 @@ public class ArticleDao {
         
         EntityManager entityManager = entitiyManagerProvider.get();
         
-        TypedQuery<User> q = entityManager.createQuery("SELECT x FROM User x WHERE username = :usernameParam", User.class);
-        User user = q.setParameter("usernameParam", username).getSingleResult();
+        TypedQuery<AppUser> q = entityManager.createQuery("SELECT x FROM AppUser x WHERE username = :usernameParam", AppUser.class);
+        AppUser user = q.setParameter("usernameParam", username).getSingleResult();
         
         if (user == null) {
             return false;

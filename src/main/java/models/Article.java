@@ -48,7 +48,7 @@ public class Article {
     
     public Article() {}
     
-    public Article(User author, String title, String content) {
+    public Article(AppUser author, String title, String content) {
         this.authorIds = Lists.newArrayList(author.id);
         this.title = title;
         this.content = content;

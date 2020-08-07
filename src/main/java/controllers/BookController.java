@@ -2,7 +2,7 @@ package controllers;
 
 import models.BookDto;
 import models.BooksDto;
-import models.User;
+import models.AppUser;
 import models.UserDto;
 import models.Book;
 import ninja.Context;
@@ -132,10 +132,10 @@ public class BookController {
         boolean t = bookDao.isalreadyUser(username, fullname,password);
         boolean a=   bookDao.newsignup(username, userDto);
         if(t) {
-        	context.getFlashScope().error("User Already There!");
+        	context.getFlashScope().error("AppUser Already There!");
         	return Results.redirect("/signup");
         }else {
-   	 User user=  bookDao.currentuser(userDto.username);  
+   	 AppUser user=  bookDao.currentuser(userDto.username);  
    	 controller.cuser=user.id;
    	  controller.temp=controller.cuser;
        	 if (a) {

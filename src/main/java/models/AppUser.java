@@ -22,7 +22,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class AppUser {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -32,9 +32,9 @@ public class User {
     public String fullname;
     public boolean isAdmin;
     
-    public User() {}
+    public AppUser() {}
     
-    public User(String username, String password, String fullname) {
+    public AppUser(String username, String password, String fullname) {
         this.username = username;
         this.password = password;
         this.fullname = fullname;

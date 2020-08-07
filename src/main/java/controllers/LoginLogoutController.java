@@ -43,7 +43,7 @@ import com.google.inject.Singleton;
 
 import dao.BookDao;
 import dao.UserDao;
-import models.User;
+import models.AppUser;
 
 @Singleton
 public class LoginLogoutController {
@@ -70,7 +70,7 @@ public class LoginLogoutController {
 
         boolean isUserNameAndPasswordValid = userDao.isUserAndPasswordValid(username, password);
         if (isUserNameAndPasswordValid) {
-        	User user = bookDao.currentuser(username);
+        	AppUser user = bookDao.currentuser(username);
         	this.cuser = user.id;
         	temp = this.cuser;
             Session session = context.getSession();

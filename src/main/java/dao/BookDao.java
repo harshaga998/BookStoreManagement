@@ -15,7 +15,7 @@ import models.BookDto;
 import models.Book;
 import models.BookDto;
 import models.BooksDto;
-import models.User;
+import models.AppUser;
 import models.UserDto;
 import ninja.jpa.UnitOfWork;
 
@@ -54,8 +54,8 @@ public class BookDao {
         
         EntityManager entityManager = entitiyManagerProvider.get();
         
-        TypedQuery<User> q = entityManager.createQuery("SELECT x FROM User x WHERE username = :usernameParam", User.class);
-        User user = q.setParameter("usernameParam", username).getSingleResult();
+        TypedQuery<AppUser> q = entityManager.createQuery("SELECT x FROM AppUser x WHERE username = :usernameParam", AppUser.class);
+        AppUser user = q.setParameter("usernameParam", username).getSingleResult();
         
         if (user == null) {
             return false;
@@ -80,7 +80,7 @@ public class BookDao {
         	System.out.println("Value of X: "+x);
         	System.out.println("###########################");
             if(x==0){
-            	User u = new User(userDto.username,userDto.password, userDto.fullname);
+            	AppUser u = new AppUser(userDto.username,userDto.password, userDto.fullname);
             	entityManager.persist(u);
             	return true;
             }else {
@@ -145,12 +145,12 @@ public class BookDao {
     }
     
     @UnitOfWork
-    public User currentuser(String username) {
+    public AppUser currentuser(String username) {
         
         EntityManager entityManager = entitiyManagerProvider.get();
         
-        TypedQuery<User> q = entityManager.createQuery("SELECT x FROM User x WHERE x.username = :nameParam", User.class);
-        User user = q.setParameter("nameParam", username).getSingleResult();        
+        TypedQuery<AppUser> q = entityManager.createQuery("SELECT x FROM AppUser x WHERE x.username = :nameParam", AppUser.class);
+        AppUser user = q.setParameter("nameParam", username).getSingleResult();        
         
         return user;
 
@@ -163,8 +163,8 @@ public class BookDao {
         
         EntityManager entityManager = entitiyManagerProvider.get();
         
-        TypedQuery<User> q = entityManager.createQuery("SELECT x FROM User x WHERE username = :usernameParam", User.class);
-        User user = q.setParameter("usernameParam", username).getSingleResult();
+        TypedQuery<AppUser> q = entityManager.createQuery("SELECT x FROM AppUser x WHERE username = :usernameParam", AppUser.class);
+        AppUser user = q.setParameter("usernameParam", username).getSingleResult();
         
         if (user == null) {
             return false;
@@ -187,8 +187,8 @@ public class BookDao {
             
             EntityManager entityManager = entityManagerProvider.get();
             
-            TypedQuery<User> q = entityManager.createQuery("SELECT x FROM User x WHERE username = :usernameParam", User.class);
-            User user = UserDao.getSingleResult(q.setParameter("usernameParam", username));
+            TypedQuery<AppUser> q = entityManager.createQuery("SELECT x FROM AppUser x WHERE username = :usernameParam", AppUser.class);
+            AppUser user = UserDao.getSingleResult(q.setParameter("usernameParam", username));
 
             if (user != null) {
                 

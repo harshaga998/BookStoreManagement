@@ -43,7 +43,7 @@ public class Book {
     public List<Long> authorIds;
     public Book() {}
     
-    public Book(User author ,String book_title, String book_price) {
+    public Book(AppUser author ,String book_title, String book_price) {
     	this.authorIds = Lists.newArrayList(author.id);
         this.book_title = book_title;
         this.book_price = book_price;
