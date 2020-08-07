@@ -164,7 +164,7 @@
 		        <configuration>
 		        <appName>${heroku.appName}</appName>
 		        <processTypes>
-		          <web>mvn ninja:run</web>
+		          <web>java $JAVA_OPTS -Dninja.mode=prod -jar target/dependency/jetty-runner.jar --port $PORT target/*.war</web>
 		        </processTypes>
 		      </configuration>
 	      	</plugin>
