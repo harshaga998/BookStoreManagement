@@ -71,6 +71,7 @@ public class Routes implements ApplicationRoutes {
        router.GET().route("/allbooks").with(BookController::getbooksJson);
         router.GET().route("/upload").with(BookController::upload);
         router.POST().route("/upload").with(BookController::uploadFinish);
+        router.POST().route("/savePushReports").with(BookController::savePushedReports);
         ///////////////////////////////////////////////////////////////////////
         // Create new article
         ///////////////////////////////////////////////////////////////////////

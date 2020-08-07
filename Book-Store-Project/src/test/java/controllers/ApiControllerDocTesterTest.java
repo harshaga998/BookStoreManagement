@@ -39,7 +39,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 
 public class ApiControllerDocTesterTest extends NinjaDocTester {
-    
+    String a = "";
     String GET_ARTICLES_URL = "/api/{username}/articles.json";
     String GET_ARTICLE_URL = "/api/{username}/article/{id}.json";
     String POST_ARTICLE_URL = "/api/{username}/article.json";

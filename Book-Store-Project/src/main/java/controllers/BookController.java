@@ -2,6 +2,7 @@ package controllers;
 
 import models.BookDto;
 import models.BooksDto;
+import models.PushedTestReportDto;
 import models.User;
 import models.UserDto;
 import models.Book;
@@ -44,9 +45,16 @@ public class BookController {
     @Inject
     UserDao userDao;
     LoginLogoutController controller = new LoginLogoutController();
-    
-   
 
+    public Result savePushedReports(@JSR303Validation PushedTestReportDto pushDto) {
+//    	BookDto sampleBook = new BookDto();
+//    	sampleBook.book_price = "20";
+//    	sampleBook.book_title = "Harsh Sample Book";
+//    	bookDao.postBook("Bob", sampleBook);
+    	return Results.json().render("Successful");
+    }
+    
+    
     public Result getbooksJson() {
 
       BooksDto booksDto = bookDao.getAllBooks();
