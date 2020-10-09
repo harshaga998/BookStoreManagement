@@ -8,7 +8,7 @@ You can acces the live version of this project here: https://book-store-manageme
 ![Homepage](/homepage.PNG)
 
 ## Login
-![Login](/Login.PNG)
+![Login](/Login.png)
 
 ## Signup
-![Signup](/Signup.PNG)
+![Signup](/Signup.png)
