@@ -5,3 +5,4 @@ An MVC based project perfectly demonstrating the use of CRUD operations using Re
 You can acces the live version of this project here: https://book-store-management.herokuapp.com/
 
 ## Home Page
+![Homepage](/homepage.PNG)
