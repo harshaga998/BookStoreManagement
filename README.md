@@ -6,3 +6,9 @@ You can acces the live version of this project here: https://book-store-manageme
 
 ## Home Page
 ![Homepage](/homepage.PNG)
+
+## Login
+![Login](/Login.PNG)
+
+## Signup
+![Signup](/Signup.PNG)
